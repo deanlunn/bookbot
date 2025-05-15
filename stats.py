@@ -12,3 +12,12 @@ def count_characters(text: str) -> dict:
         else:
             char_count[char] = 1
     return char_count
+
+def sort_characters(char_count: dict) -> list:
+    """
+    Takes a dictionary of characters and their counts and returns a sorted list of dictionaries.
+    Each dictionary contains 'char' and 'num' keys, sorted by count in descending order.
+    """
+    sorted_list = [{"char": char, "num": count} for char, count in char_count.items()]
+    sorted_list.sort(key=lambda x: x["num"], reverse=True)
+    return sorted_list
